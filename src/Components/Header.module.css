@@ -1,0 +1,17 @@
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 5px;
+    padding: 10px;
+    background-image: "toDo.jpg";
+}
+
+h1 {
+    color: black ;
+    font-weight: 900;
+    background-color: rgb(54, 54, 173);
+    color: lavender;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}

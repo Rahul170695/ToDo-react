@@ -1,0 +1,26 @@
+.card {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 70%;   
+}
+
+.card input{
+    display: inline-block;
+    width: 85%;
+    border: 1px solid lightblue;    
+}
+
+.card button{
+     margin: 0.5rem;
+     padding: 2px;
+     background-color: rgb(54, 54, 173);
+     border-radius: 0.5rem;
+     width: 10%;
+     color: rgb(235, 240, 210);
+}
+
+.card input:focus{
+    border: 1px solid blue;
+    outline: none;
+    background-color: ivory;
+}

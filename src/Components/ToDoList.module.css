@@ -1,0 +1,31 @@
+.card {
+    width:75%;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+.lists{
+    border: 1px solid black ; 
+    padding: 5px;
+    margin: 3px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.list{
+    border: 1px solid lightblue;
+    padding: 2px;
+    width: 90%;
+    display: inline-block;
+    
+}
+
+.delete{
+margin: 3px;
+padding: 0; 
+cursor: pointer;
+}
+
+.editIcon{ 
+    cursor: pointer;
+}
