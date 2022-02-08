@@ -6,7 +6,7 @@
 
 .card input{
     display: inline-block;
-    width: 85%;
+    width: 84%;
     border: 1px solid lightblue;    
 }
 
@@ -15,7 +15,7 @@
      padding: 2px;
      background-color: rgb(54, 54, 173);
      border-radius: 0.5rem;
-     width: 10%;
+     width: 12%;
      color: rgb(235, 240, 210);
 }
 
