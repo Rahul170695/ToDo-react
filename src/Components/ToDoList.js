@@ -15,9 +15,7 @@ const ToDoList = (props) => {
                 <div className={classes.list} >
                     {myList.input}
                 </div> 
-                <EditIcon  className={classes.editIcon} 
-                onClick={()=>props.onEditUser(myList.input, myList.id)} />  
-                {/* <DoneIcon /> */}
+                <EditIcon  className={classes.editIcon} />  
                 <DeleteIcon className={classes.delete} onClick={()=>props.onDeleteUser(myList.id)} />                      
             </li>           
             )})}

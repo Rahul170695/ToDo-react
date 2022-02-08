@@ -17,10 +17,6 @@ const ToDoContainer = (props) => {
         setInputAdd([]);
       }
 
-    // const onEditUserHandler= (inputAdd)=>{
-    //       setInputAdd(inputAdd);
-    //   }
-
   return(
         <Card className={classes.card} >
         <form onSubmit={ToDoAddHandler} > 
