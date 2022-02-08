@@ -1,22 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-// import DoneIcon from '@mui/icons-material/Done';
 import classes from './ToDoList.module.css';
 
 const ToDoList = (props) => {
-    // const [editUser, setEditUser] = useState(null);
 
     return(
         <div className={classes.card} > 
-            {props.myLists.map((myList) => {
+            {props.tasks.map((task) => {
                 return(
-            <li className={classes.lists} key={myList.id}  >
+            <li className={classes.lists} key={task.id}  >
                 <div className={classes.list} >
-                    {myList.input}
-                </div> 
-                <EditIcon  className={classes.editIcon} />  
-                <DeleteIcon className={classes.delete} onClick={()=>props.onDeleteUser(myList.id)} />                      
+                    {task.input}
+                </div>
+                <EditIcon  className={classes.editIcon} onClick={()=>props.onEdit(task.id)} />  
+                <DeleteIcon className={classes.delete} onClick={()=>props.onDeleteUser(task.id)} />                      
             </li>           
             )})}
         </div>

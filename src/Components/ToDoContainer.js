@@ -1,32 +1,45 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Card from '../UI/Card';
 import classes from './ToDoContainer.module.css';
 
 const ToDoContainer = (props) => {
-    const [inputAdd, setInputAdd] = useState([]);
+	const [task, setTask] = useState('');
+    const [isValid, setIsValid]=useState(false);
+	useEffect(() => {
+		if (props.isEdit) {
+			setTask(props.editTask.input);
+		} else {
+			setTask('');
+		}
+	}, [props.isEdit, props.editTask]);
 
-    const InputAddHandler= (event)=>{
-    setInputAdd(event.target.value);
-    }
+	const onTaskInputChange = (event) => {
+        if(event.target.value.trim()) {
+            setTask(event.target.value);
+            setIsValid(true);
+        }
+	};
 
-    const ToDoAddHandler =(event)=> {
-        // console.log(inputAdd);
-        event.preventDefault();
-        props.onAddInput(inputAdd);
-        setInputAdd([]);
-      }
+	const addTaskHandler = (event) => {
+		event.preventDefault();
+		props.onAddInput(task);
+		setTask('');
+	};
 
-  return(
-        <Card className={classes.card} >
-        <form onSubmit={ToDoAddHandler} > 
-            <input type="text" placeholder="Start Adding"
-             onChange={InputAddHandler}
-             value={inputAdd} />
-            <button type="submit" >Add</button>
-        </form>
-        </Card>  
-    );  
+	return (
+		<Card className={classes.card}>
+			<form onSubmit={addTaskHandler}>
+				<input
+					type="text"
+					placeholder="Start Adding"
+					onChange={onTaskInputChange}
+					value={task}
+				/>
+				<button type="submit" disabled={!isValid}>{props.isEdit?'Update':'Add'}</button>
+			</form>
+		</Card>
+	);
 };
 
 export default ToDoContainer;
