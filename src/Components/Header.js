@@ -7,10 +7,10 @@ const Header = () => {
       // <div className={classes.heading} >
       //   <h1 className={classes.content} >TODO</h1>
       // </div>
-      <>
-      <img src={image} alt="TODO" className={classes.image} />
+      <div className={classes.parentTitle} >
+      <img src={image} alt="TODO"/>
         <h1 className={classes.title} >TODO</h1>
-        </>
+        </div>
     );
   }
   

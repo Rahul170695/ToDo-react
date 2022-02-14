@@ -44,3 +44,14 @@
     font-weight: bolder; 
     margin-bottom: 1rem;
 }
+
+@media(max-width:600px){
+    .card button{
+        margin-top: 0.5rem;
+        padding: 1px;
+        background-color: rgb(54, 54, 173);
+        border-radius: 0.5rem;
+        width: 25%;
+        color: rgb(235, 240, 210);
+    }
+}

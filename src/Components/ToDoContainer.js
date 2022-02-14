@@ -35,7 +35,8 @@ const ToDoContainer = (props) => {
         <form onSubmit={ToDoAddHandler} > 
             <input type="text" placeholder="Start Adding"
              onChange={InputAddHandler}
-             value={inputAdd} />
+             value={inputAdd} 
+             maxlength="60"/>
             <button type="submit" disabled={!isValid} >{props.editTask? "Update" : "Add"}</button>
         </form>
         </Card>  
