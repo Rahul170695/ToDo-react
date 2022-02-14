@@ -29,3 +29,17 @@ cursor: pointer;
 .editIcon{ 
     cursor: pointer;
 }
+
+/* .clearButton {
+    margin: 0.5rem;
+     padding: 2px;
+     background-color: rgb(54, 54, 173);
+     border-radius: 0.5rem;
+     width: 12%;
+     color: rgb(235, 240, 210);
+} */
+
+.clearCard{
+    display: flex;
+    justify-content: flex-end;
+}

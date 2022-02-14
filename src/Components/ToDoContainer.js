@@ -19,7 +19,7 @@ const ToDoContainer = (props) => {
 		if(event.target.value.trim()){
 	setInputAdd(event.target.value);
 	setIsValid(true);
-		}
+        }
     }
 
     const ToDoAddHandler =(event)=> {
@@ -27,6 +27,7 @@ const ToDoContainer = (props) => {
 		event.preventDefault();
         props.onAddInput(inputAdd);
         setInputAdd("");
+        setIsValid(false);
       }
 
   return(

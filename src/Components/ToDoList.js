@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 // import DoneIcon from '@mui/icons-material/Done';
 import classes from './ToDoList.module.css';
+import Button from '../UI/Button';
 
 const ToDoList = (props) => {
-    // const [editUser, setEditUser] = useState(null);
 
     return(
+        <>
         <div className={classes.card} > 
             {props.myLists.map((myList) => {
                 return(
@@ -17,9 +18,14 @@ const ToDoList = (props) => {
                 </div> 
                 <EditIcon  className={classes.editIcon} onClick={()=>props.onEditUser(myList.id)} />  
                 <DeleteIcon className={classes.delete} onClick={()=>props.onDeleteUser(myList.id)} />                      
-            </li>           
+            </li> 
             )})}
+            {props.myLists.length > 1 && 
+            <div className={classes.clearCard} >
+                <Button onClick ={()=>props.onClearLists()}/>
+                </div>}            
         </div>
+        </>
     );
 }
 

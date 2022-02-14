@@ -2,10 +2,15 @@ import React,{useState} from 'react';
 import Header from './Components/Header';
 import ToDoContainer from './Components/ToDoContainer';
 import ToDoList from './Components/ToDoList'; 
+import ErrorModal from './UI/ErrorModal';
+
+import classes from './App.module.css';
 
 const App = ()=>{
   const [AddToDo, setAddToDo] = useState([]);
-  const [editTask, setEditTask] = useState(null);  
+  const [editTask, setEditTask] = useState(null); 
+  const [clearAll, setClearAll] = useState(null); 
+  
 
   const addToDoHandler = (uInput) => {
 	  if(editTask !== null){
@@ -29,16 +34,28 @@ const App = ()=>{
 
   const onEditUserHandler = (id) => {
 	  const editedTask = [...AddToDo].find((task)=> task.id === id );
-	  console.log(editedTask);
 	  setEditTask(editedTask);
   }
 
+  const onClearLists = () => {
+    setClearAll(true);
+  }
+
+  const onClearAllHandler = () => {
+    setAddToDo([]);
+    setClearAll(null);
+  }
+
+  const onBackdropClick= ()=> {
+    setClearAll(null);
+  }
   return (
-    <div > 
+    <div className={classes.content} > 
       <Header />
       <ToDoContainer onAddInput={addToDoHandler} editTask={editTask} />
-      <ToDoList myLists={AddToDo} onDeleteUser={deleteUserHandler} onEditUser={onEditUserHandler}/> 
-
+      <ToDoList myLists={AddToDo} onDeleteUser={deleteUserHandler} 
+      onEditUser={onEditUserHandler} onClearLists={onClearLists}/> 
+      {clearAll && <ErrorModal  onClearAll={onClearAllHandler} onBackdropClick={onBackdropClick}/>}
     </div >
   );
 }

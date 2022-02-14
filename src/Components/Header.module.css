@@ -1,4 +1,4 @@
-.heading {
+/* .heading {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -14,4 +14,23 @@ h1 {
     color: lavender;
     padding: 0.5rem;
     border-radius: 0.5rem;
+} */
+.image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.title {
+    position: fixed;
+    font-size: 50px;
+    color: whitesmoke;
+    letter-spacing: 15px;
+    width: 50%;
+    height: 20%;
+    z-index: 5;
+
+
 }
